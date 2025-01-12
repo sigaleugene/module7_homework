@@ -7,7 +7,7 @@
 function printInfo(){
     console.log(this);
 }
-persone = {
+const persone = {
     Name: 'Иван',
     Age: 25
 }
@@ -34,7 +34,7 @@ function calculate(a,b,operator){
         default: return NaN;
     }
 }
-arr = [2, 3, "+"];
+const arr = [2, 3, "+"];
 console.log(calculate.apply(null,arr));
 
  /*Задание 7.7.3
@@ -46,7 +46,7 @@ age (возраст). Создайте новый массив, содержащ
 только свойства name (имя) каждого пользователя.
  */
 
-users =[ 
+const users =[ 
     {Name:"User1", Age:15},
     {Name:"User2", Age:16},
     {Name:"User3", Age:17},
@@ -57,11 +57,11 @@ users =[
     {Name:"User8", Age:22},
     {Name:"User9", Age:23},
     {Name:"User10",Age:24}
-]
+];
 
-adultUsrs = users.filter(u=>u.Age>=18);
-console.log(adultUsrs)
-usersName=[]
+const adultUsrs = users.filter(u=>u.Age>=18);
+console.log(adultUsrs);
+const usersName=[];
 users.forEach(element => {
     usersName.push(element.Name);
 });
@@ -78,13 +78,11 @@ console.log(usersName);
 с параметром "John Smith" и убедитесь, что свойство 
 fullName объекта person было изменено соответствующим образом. */
 
-user={fullName:""}
+const user={fullName:""}
 function setFullName(person, fName){
-    console.log(1);
     person.fullName = fName;
 }
 function setPersonFullName(fName){
-    console.log(2);
     setFullName(this,fName);
 }
 const func = setPersonFullName.bind(user);
@@ -98,9 +96,9 @@ console.log(user);
 отсортированные в порядке возрастания.
  * 
  */
-const arr1 = [22,11,9,2,1,3,5,4,6,1,2,3,8,9]
-set = new Set(arr1);
-arr2= new Array(...set);
-arr2.sort((a,b)=>a-b);
-console.log(arr2);
+const arrBase = [22,11,9,2,1,3,5,4,6,1,2,3,8,9]
+const set = new Set(arrBase);
+const arrUniq= new Array(...set);
+arrUniq.sort((a,b)=>a-b);
+console.log(arrUniq);
 
